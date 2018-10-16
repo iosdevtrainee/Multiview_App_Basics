@@ -8,6 +8,10 @@
 
 import UIKit
 
+// Changed the mainstory viewcontroller scene from UIViewController to FirstViewController
+
+// Also need to change the indentifier so you can call the viewcontroller storyboard from code i.e. First
+
 class FirstViewController: UIViewController {
 
     override func viewDidLoad() {
@@ -16,6 +20,14 @@ class FirstViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    @IBAction func onButtonPressed(_ sender:UIButton){
+        let alert = UIAlertController(title:"First Button Pressed", message: "You've pressed the first button", preferredStyle: .alert)
+        //
+        let action = UIAlertAction(title: "Yes I did", style: .default, handler: nil)
+        alert.addAction(action)
+        //
+        present(alert, animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation
